@@ -203,6 +203,9 @@
           font-size: 0.75rem;
           font-weight: 600;
       }
+
+
+      
     </style>
 
 
@@ -258,6 +261,14 @@
       color: #28a745;
       font-family: 'Segoe UI', sans-serif;
     }
+    html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
   </style>
 </head>
 <body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #fefaf7;">
@@ -554,7 +565,6 @@
   }
 
   .gradient-overlay {
-    content: "";
     position: absolute;
     top: -100%;
     left: 0;
@@ -566,8 +576,7 @@
     pointer-events: none;
   }
 
-  .card-container:hover .gradient-overlay,
-  .card-container:has(.gradient-overlay:hover) {
+  .card-container.animate-gradient .gradient-overlay {
     top: 0;
   }
 
@@ -576,6 +585,8 @@
     z-index: 2;
   }
 </style>
+
+
 
 <!-- Popular Categories Section -->
 <section class="py-16 bg-white">
@@ -652,6 +663,30 @@
 </section>
 
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll('.card-container');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.classList.add('animate-gradient');
+
+          // Remove class after animation completes (500ms = transition duration)
+          setTimeout(() => {
+            el.classList.remove('animate-gradient');
+          }, 600); // Slightly more than 0.5s to be safe
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
 
 
 
