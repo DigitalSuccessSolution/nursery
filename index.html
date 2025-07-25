@@ -274,64 +274,92 @@
 <body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #fefaf7;">
 
   <!-- Header -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      
-      <!-- Mobile Menu Icon -->
-      <div class="mobile-menu-btn block md:hidden">
-        <i class="ri-menu-line hamburger-icon"></i>
-      </div>
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
-      <!-- Logo -->
-      <div class="flex items-center">
-        <div class="logo-text">GreenThumb</div>
-      </div>
+    <!-- Mobile Menu Icon -->
+    <div class="block md:hidden">
+      <button id="mobileMenuBtn" class="text-2xl text-gray-700">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
 
-      <!-- Search Bar -->
-      <div class="flex-1 mx-4">
-        <div class="relative">
-          <input
-            type="text"
-            placeholder="Search for plants, seeds, planters..."
-            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-          />
-          <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-            <i class="ri-search-line text-gray-400"></i>
-          </div>
+    <!-- Logo -->
+    <div class="flex items-center">
+      <div class="logo-text text-xl font-bold text-green-700">GreenThumb</div>
+    </div>
+
+    <!-- Search Bar (hidden on very small screens) -->
+    <div class="hidden sm:flex flex-1 mx-4">
+      <div class="relative w-full">
+        <input
+          type="text"
+          placeholder="Search for plants, seeds, planters..."
+          class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+        />
+        <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+          <i class="ri-search-line text-gray-400"></i>
         </div>
-      </div>
-
-      <!-- Icons -->
-      <div class="flex items-center space-x-4">
-        <button class="relative text-gray-600">
-          <i class="ri-heart-line text-xl"></i>
-          <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
-        </button>
-        <button class="relative text-gray-600">
-          <i class="ri-shopping-cart-line text-xl"></i>
-          <span class="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">5</span>
-        </button>
-        <button class="text-gray-600">
-          <i class="ri-user-line text-xl"></i>
-        </button>
       </div>
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="bg-white border-t border-gray-100 desktop-nav">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-center space-x-6 h-14">
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Plants</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Seeds</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Planters</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Tools & Accessories</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Combo Packs</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Services</a>
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Blog</a>
-        </div>
+    <!-- Icons -->
+    <div class="flex items-center space-x-4">
+      <button class="relative text-gray-600">
+        <i class="ri-heart-line text-xl"></i>
+        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+      </button>
+      <button class="relative text-gray-600">
+        <i class="ri-shopping-cart-line text-xl"></i>
+        <span class="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">5</span>
+      </button>
+      <button class="text-gray-600">
+        <i class="ri-user-line text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="bg-white border-t border-gray-100 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center space-x-6 h-14">
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Plants</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Seeds</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Planters</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Tools & Accessories</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Combo Packs</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Services</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Blog</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation (toggle) -->
+  <nav id="mobileNav" class="md:hidden hidden bg-white border-t border-gray-100 px-4 py-4">
+    <div class="flex flex-col space-y-3">
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Plants</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Seeds</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Planters</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Tools & Accessories</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Combo Packs</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Services</a>
+      <a href="#" class="text-gray-700 hover:text-green-600 font-medium">Blog</a>
+    </div>
+  </nav>
+</header>
+<script>
+  // Wait for DOM to load
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuBtn.addEventListener("click", function () {
+      mobileNav.classList.toggle("hidden");
+    });
+  });
+</script>
+
+
 
   <!-- Category Section Start -->
   <div style="width: 100%; background-color: #fff; padding: 20px 0;">
@@ -1177,150 +1205,155 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="font-heading text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
-          >
-            What Our Customers Say
-          </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join thousands of happy customers who have transformed their spaces
-            with our plants
-          </p>
+
+<!-- Garden Decor & Care Section -->
+<section class="py-12">
+  <div class="text-center mb-8">
+    <h2 class="text-xl md:text-2xl font-semibold text-gray-800">Garden Decor & Care</h2>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <!-- Planters -->
+    <div
+      class="relative bg-cover bg-center bg-no-repeat rounded-md shadow h-80 flex flex-col justify-end p-6 text-white"
+      style="background-image: url('images/gird-1.png');"
+    >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-md"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-2">Planters - Starting ₹129</h3>
+        <p class="mb-4">Add color to your garden. 400+ pots of different colors, shapes, and materials.</p>
+        <button class="bg-rose-500 text-white px-5 py-2 rounded hover:bg-rose-600">Shop Now</button>
+      </div>
+    </div>
+
+    <!-- Soil & Fertilizers -->
+    <div
+      class="relative bg-cover bg-center bg-no-repeat rounded-md shadow h-80 flex flex-col justify-end p-6 text-white"
+      style="background-image: url('images/grid-2.png');"
+    >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-md"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-2">Soil & Fertilizers - Starting ₹100</h3>
+        <p class="mb-4">Healthy food is a key for healthy plants. Choose from a wide range of soil and fertilizers.</p>
+        <button class="bg-rose-500 text-white px-5 py-2 rounded hover:bg-rose-600">Shop Now</button>
+      </div>
+    </div>
+
+    <!-- Pebbles -->
+    <div
+      class="relative bg-cover bg-center bg-no-repeat rounded-md shadow h-80 flex flex-col justify-end p-6 text-white"
+      style="background-image: url('images/grid-3.png');"
+    >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-md"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-2">Pebbles - Starting ₹79</h3>
+        <p class="mb-4">Add visual and textural features to your garden with a wide range of natural pebbles.</p>
+        <button class="bg-rose-500 text-white px-5 py-2 rounded hover:bg-rose-600">Shop Now</button>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div
+      class="relative bg-cover bg-center bg-no-repeat rounded-md shadow h-80 flex flex-col justify-end p-6 text-white"
+      style="background-image: url('images/grid-4.png');"
+    >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-md"></div>
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-2">Tools - Starting ₹129</h3>
+        <p class="mb-4">Get a tool for every gardening activity and make it a fun experience.</p>
+        <button class="bg-rose-500 text-white px-5 py-2 rounded hover:bg-rose-600">Shop Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+   <!-- ⭐ Include in <head> -->
+<style>
+  .testimonial-slider {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .testimonial-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-track {
+    display: flex;
+    gap: 1rem;
+    min-width: max-content;
+  }
+
+  .testimonial-item {
+    scroll-snap-align: start;
+    min-width: 320px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-track {
+      flex-wrap: nowrap;
+    }
+
+    .testimonial-item {
+      min-width: unset;
+      flex: 1;
+    }
+  }
+</style>
+
+<!-- ✅ Testimonials Section -->
+<section class="px-4 py-10 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">What Our Customers Say</h2>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-track">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-item">
+          <p class="text-gray-700">"Amazing service and beautiful plants. Highly recommend!"</p>
+          <h3 class="mt-4 font-semibold text-green-700">Ravi Kumar</h3>
         </div>
-
-        <div class="testimonial-slider relative overflow-hidden">
-          <div class="testimonial-track flex" id="testimonialTrack">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-item px-4">
-              <div class="bg-white rounded-xl p-8 border border-gray-100">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-600 mb-6">
-                  "Amazing quality plants and excellent customer service! My
-                  office has never looked better. The delivery was prompt and
-                  all plants arrived in perfect condition."
-                </p>
-                <div class="flex items-center">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=professional%20woman%20with%20warm%20smile%20in%20modern%20office%20setting%20with%20plants%20in%20background%20natural%20lighting%20headshot%20portrait&width=60&height=60&seq=test1&orientation=squarish"
-                    alt="Sarah Johnson"
-                    class="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <div class="font-semibold text-gray-900">Sarah Johnson</div>
-                    <div class="text-sm text-gray-600">Interior Designer</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-item px-4">
-              <div class="bg-white rounded-xl p-8 border border-gray-100">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-600 mb-6">
-                  "The garden setup service was fantastic! The team was
-                  professional and created a beautiful terrace garden that
-                  exceeded my expectations. Highly recommended!"
-                </p>
-                <div class="flex items-center">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=friendly%20middle%20aged%20man%20with%20genuine%20smile%20in%20casual%20clothing%20with%20garden%20background%20natural%20outdoor%20lighting%20portrait&width=60&height=60&seq=test2&orientation=squarish"
-                    alt="Michael Chen"
-                    class="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <div class="font-semibold text-gray-900">Michael Chen</div>
-                    <div class="text-sm text-gray-600">Homeowner</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-item px-4">
-              <div class="bg-white rounded-xl p-8 border border-gray-100">
-                <div class="flex text-yellow-400 mb-4">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                </div>
-                <p class="text-gray-600 mb-6">
-                  "Love the subscription box! Getting new plants every month has
-                  become my favorite surprise. The plant care guides are
-                  incredibly helpful for beginners."
-                </p>
-                <div class="flex items-center">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=young%20woman%20with%20bright%20smile%20holding%20small%20plant%20in%20modern%20apartment%20with%20natural%20lighting%20casual%20portrait&width=60&height=60&seq=test3&orientation=squarish"
-                    alt="Emma Rodriguez"
-                    class="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <div class="font-semibold text-gray-900">
-                      Emma Rodriguez
-                    </div>
-                    <div class="text-sm text-gray-600">Plant Enthusiast</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-item">
+          <p class="text-gray-700">"Fast delivery and excellent customer support."</p>
+          <h3 class="mt-4 font-semibold text-green-700">Priya Sharma</h3>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-item">
+          <p class="text-gray-700">"Very healthy plants and eco-friendly packaging."</p>
+          <h3 class="mt-4 font-semibold text-green-700">Amit Joshi</h3>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Newsletter Subscription -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="newsletter-bg rounded-2xl p-8 lg:p-12 text-white text-center"
-        >
-          <h2 class="font-heading text-3xl lg:text-4xl font-bold mb-4">
-            Join Our Plant Community
-          </h2>
-          <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Get weekly plant care tips, exclusive offers, and be the first to
-            know about new arrivals
-          </p>
+<!-- ✅ Newsletter Section -->
+<section class="px-4 py-10">
+  <div class="max-w-4xl mx-auto newsletter-bg bg-green-600 rounded-2xl p-6 sm:p-8 lg:p-12 text-white text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated!</h2>
+    <p class="mb-6 text-lg">Subscribe to our newsletter for plant care tips, offers, and more.</p>
+    <form class="flex flex-col sm:flex-row gap-4 justify-center">
+      <input type="email" placeholder="Enter your email" class="w-full sm:w-2/3 px-4 py-2 rounded-lg text-black" required />
+      <button type="submit" class="bg-white text-green-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">Subscribe</button>
+    </form>
+  </div>
+</section>
 
-          <div class="max-w-md mx-auto">
-            <div class="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                class="flex-1 px-6 py-4 rounded-button text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button
-                class="bg-white text-primary px-8 py-4 rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </div>
-            <p class="text-sm opacity-80 mt-4">
-              No spam, unsubscribe at any time
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
