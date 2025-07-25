@@ -1079,7 +1079,7 @@
 
 <div class="vfm-container">
   <div class="vfm-inner">
-    <h2 class="vfm-heading">Value For Money - Upto 35% Off</h2>
+    <h2 class="vfm-heading ">Value For Money - Upto 35% Off</h2>
     <div class="vfm-scroll">
 
       <!-- Card 1 -->
@@ -1209,7 +1209,7 @@
 <!-- Garden Decor & Care Section -->
 <section class="py-12">
   <div class="text-center mb-8">
-    <h2 class="text-xl md:text-2xl font-semibold text-gray-800">Garden Decor & Care</h2>
+    <h2 class="text-xl md:text-2xl font-semibold text-[#2a5d27]">Garden Decor & Care</h2>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1274,6 +1274,287 @@
 
 
 
+<style>
+  .pyrofx-blog-section {
+    padding: 50px 20px;
+    background-color: #f8fdf8;
+  }
+
+  .blog-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 86%;
+    margin: 0 auto 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .blog-header-flex h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2a5d27;
+    margin: 0;
+  }
+
+  .view-all-link {
+    color: #2a5d27;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid #2a5d27;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: 0.3s;
+  }
+
+  .view-all-link:hover {
+    background-color: #2a5d27;
+    color: #fff;
+  }
+
+  .blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .blog-card {
+    flex: 1 1 300px;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e8e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-text-top {
+    padding: 20px;
+  }
+
+  .card-text-top p {
+    color: #354d30;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .image-wrapper {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .arrow-link {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .arrow-circle {
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    transition: background 0.4s;
+    position: relative;
+  }
+
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    color: #000;
+  }
+
+  .arrow-icon.hover {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .arrow-circle:hover {
+    background: linear-gradient(135deg, #2a5d27, #ffffff);
+  }
+
+  .arrow-circle:hover .arrow-icon.static {
+    transform: translate(-50%, -50%) scale(1.4) translateX(100%);
+    opacity: 0;
+  }
+
+  .arrow-circle:hover .arrow-icon.hover {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    color: #fff;
+  }
+
+  .card-overlay {
+    padding: 20px;
+    background: #fff;
+  }
+
+  .card-overlay h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #2a5d27;
+    font-weight: 600;
+  }
+
+  .card-date {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #6b8e6b;
+  }
+
+  @media (max-width: 768px) {
+    .blog-header-flex {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .blog-card {
+      width: 100%;
+      max-width: 95%;
+    }
+
+    .image-wrapper {
+      height: 180px;
+    }
+
+    .card-text-top p {
+      font-size: 13px;
+    }
+
+    .card-overlay h3 {
+      font-size: 18px;
+    }
+
+    .arrow-circle {
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+    }
+
+    .arrow-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>
+
+<section class="pyrofx-blog-section">
+  <div class="blog-header-flex">
+    <h2>Latest from the Nurserylive Blog</h2>
+    <a href="/blog" class="view-all-link">View All Articles</a>
+  </div>
+
+  <div class="blog-cards">
+    
+    <!-- Blog Card 1 -->
+    <div class="blog-card">
+      <div class="card-text-top">
+        <p>Monsoon gardening: top tips to prep your plants for India’s rainy season...</p>
+      </div>
+      <div class="image-wrapper" style="background-image: url('/images/blog-1.png');">
+        <a href="/blog/monsoon-gardening.html" class="arrow-link" target="_blank" title="Read more">
+          <span class="arrow-circle group inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md transition duration-300 hover:bg-[#2a5d27]">
+  <!-- Static Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-[#2a5d27] group-hover:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+
+  <!-- Hover Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-white hidden group-hover:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+</span>
+
+        </a>
+      </div>
+      <div class="card-overlay">
+        <h3>Monsoon Gardening Tips</h3>
+        <span class="card-date">Published: July 2025</span>
+      </div>
+    </div>
+
+    <!-- Blog Card 2 -->
+    <div class="blog-card">
+      <div class="card-text-top">
+        <p>5 air-purifying plants perfect for Indian homes & offices...</p>
+      </div>
+      <div class="image-wrapper" style="background-image: url('/images/blog-2.png');">
+        <a href="/blog/air-purifying-plants.html" class="arrow-link" target="_blank" title="Read more">
+         <span class="arrow-circle group inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md transition duration-300 hover:bg-[#2a5d27]">
+  <!-- Static Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-[#2a5d27] group-hover:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+
+  <!-- Hover Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-white hidden group-hover:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+</span>
+
+        </a>
+      </div>
+      <div class="card-overlay">
+        <h3>Top 5 Air‑Purifying Plants</h3>
+        <span class="card-date">Published: June 2025</span>
+      </div>
+    </div>
+
+    <!-- Blog Card 3 -->
+    <div class="blog-card">
+      <div class="card-text-top">
+        <p>How to choose the right soil mix and fertilizers for pot plants...</p>
+      </div>
+      <div class="image-wrapper" style="background-image: url('/images/blog-3.png');">
+        <a href="/blog/soil-and-fertilizer.html" class="arrow-link" target="_blank" title="Read more">
+          <span class="arrow-circle group inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md transition duration-300 hover:bg-[#2a5d27]">
+  <!-- Static Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-[#2a5d27] group-hover:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+
+  <!-- Hover Arrow Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon w-6 h-6 text-white hidden group-hover:block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+</span>
+
+        </a>
+      </div>
+      <div class="card-overlay">
+        <h3>Soil & Fertilizer Guide</h3>
+        <span class="card-date">Published: May 2025</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
    <!-- ⭐ Include in <head> -->
 <style>
   .testimonial-slider {
@@ -1316,7 +1597,7 @@
 </style>
 
 <!-- ✅ Testimonials Section -->
-<section class="px-4 py-10 bg-gray-50">
+<section class="px-4 py-10 bg-rgb(249 250 251)">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">What Our Customers Say</h2>
 
@@ -1342,17 +1623,132 @@
   </div>
 </section>
 
-<!-- ✅ Newsletter Section -->
-<section class="px-4 py-10">
-  <div class="max-w-4xl mx-auto newsletter-bg bg-green-600 rounded-2xl p-6 sm:p-8 lg:p-12 text-white text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated!</h2>
-    <p class="mb-6 text-lg">Subscribe to our newsletter for plant care tips, offers, and more.</p>
-    <form class="flex flex-col sm:flex-row gap-4 justify-center">
-      <input type="email" placeholder="Enter your email" class="w-full sm:w-2/3 px-4 py-2 rounded-lg text-black" required />
-      <button type="submit" class="bg-white text-green-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">Subscribe</button>
-    </form>
+
+
+
+
+
+
+<style>
+  .newsletter-section {
+    background-color: #fff;
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', sans-serif;
+    gap: 20px;
+  }
+
+  .newsletter-text {
+    flex: 1 1 300px;
+  }
+
+  .newsletter-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+  }
+
+  .newsletter-text p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  .newsletter-form {
+    flex: 1 1 300px;
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+  }
+
+  .newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 30px 0 0 30px;
+    background-color: transparent;
+  }
+
+  .newsletter-form button {
+    padding: 0 25px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    transition: background 0.3s ease;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-section {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    .newsletter-text h2 {
+      font-size: 26px;
+    }
+
+    .newsletter-text p {
+      font-size: 14px;
+    }
+
+    .newsletter-form {
+      flex-direction: column;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+      gap: 10px;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+      width: 100%;
+      border-radius: 30px;
+    }
+
+    .newsletter-form input[type="email"] {
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .newsletter-form button {
+      padding: 12px;
+    }
+  }
+</style>
+
+<section class="newsletter-section">
+  <div class="newsletter-text">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Be the first to know about new products and exclusive offers.</p>
   </div>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
 </section>
+
+
 
 
     <!-- Footer -->
